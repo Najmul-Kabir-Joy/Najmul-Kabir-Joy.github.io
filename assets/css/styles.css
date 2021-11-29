@@ -220,9 +220,9 @@ img{
 .home__container{
   height: calc(100vh - var(--header-height));
   align-items: center;
-  border: 5px solid var(--first-color);
-  border-radius: 2.8rem;
-  padding: 5px;
+  /* border: 5px solid var(--first-color); */
+  /* border-radius: 2.8rem; */
+  /* padding: 5px; */
 
 }
 
@@ -232,6 +232,7 @@ img{
   align-items: center;
   height: max-content;
   text-align: center;
+  margin-bottom: 10rem;
 }
 
 .home__img{
@@ -239,20 +240,21 @@ img{
   padding-left: .8rem; */
   width: 300px;
   height: 300px;
-  background-color: var(--first-color);
+  /* background-color: var(--first-color); */
   border-radius: 2.9rem;
   overflow: hidden;
   margin-bottom: var(--mb-2);
   margin-top: var(--mb-5);
+  overflow: visible;
 
   transform: translateY(-8px);
   box-shadow: 5px 10px 30px rgba(0,0,0,.1);
-  transition: all ease 0.2s;
-
 }
 
 .home__img img{
   width: 300px;
+  transition: ease-in-out 1s;
+
 }
 
 .home__title{
@@ -265,9 +267,60 @@ img{
 .home__proffession{
   font-size: var(--h3-font-size);
   color: var(--first-color-dark);
-  margin-bottom: var(--mb-5);
+  margin-bottom: var(--mb-3);
   text-transform: uppercase;
 }
+
+.resume__button{
+  position: relative;
+  display: inline-flex;
+  padding: 10px 30px;
+  background:transparent;
+  color: var(--first-color);
+  border: 2px solid var(--first-color);
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+  font-weight: var(--font-bold);
+  font-size: var(--h3-font-size);
+  transition: ease-in-out 0.6s;
+  margin-bottom: var(--mb-4);
+
+}
+.resume__button span{
+  position: relative;
+  z-index: 1;
+  transition: ease-in-out 0.5s;
+}
+
+
+.resume__button::before{
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%,-50%);
+  width: 0px;
+  height: 0px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  transition: width 0.5s, height 0.5s;
+}
+.resume__button:hover::before{
+  width: 300px;
+  height: 300px;
+}
+
+.resume__button:hover{
+  transform: translate(0,-8px);
+  box-shadow: 1px 10px 10px 0px lightgrey;
+}
+
+.resume__button:hover span{
+  color: white;
+}
+
+
 
 .home__social{
   margin-bottom: 5rem;
@@ -333,9 +386,6 @@ img{
 .button__light:hover{
   color: var(--first-color-lighten);
 }
-
-
-
 
 /* ===== ABOUT =====*/
 .about__container{
